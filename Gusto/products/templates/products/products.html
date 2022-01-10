@@ -1,0 +1,28 @@
+<!-- View of page with product list -->
+
+<!-- Connect base structure of the webapp -->
+{% extends 'main/base_loggedin.html' %}
+
+{% block title %}
+Products
+{% endblock %}
+
+{% block content %}
+    <h1 class="product-list">Product list</h1>
+
+    <!-- display all products that exist in the database -->
+    <div class="products">
+        {% for product in products %}
+            <div class="product">
+                <h2><a href="{% url 'products:product_details' product.id %}">{{ product.title }}</a></h2>
+                
+                <h4><ion-icon name="star"></ion-icon> {{ product.ratingAvg }}</h4>
+                <p><b>Brand: </b>{{ product.brand }}</p>
+                <p><b>Country of origin: </b>{{ product.country }}</p>
+                <p><b>Ingredients: </b>{{ product.snippet_ingr }}</p>
+                <p><b>Allergens: </b>{{ product.allergens }}</p>
+                <p><b>Nutrition Facts: </b>{{ product.snippet_nutr }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

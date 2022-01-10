@@ -1,0 +1,60 @@
+<!-- View of product details page -->
+
+<!-- Connect base structure of the webapp -->
+{% extends 'main/base.html' %}
+
+{% block title %}
+Product detail
+{% endblock %}
+
+{% block content %}
+    <!-- navigation bar-->
+    <div class="navbar">
+        <ul>
+            <!-- button that redirects to main page -->
+            <li><h5 class="gusto-btn"><a href="{% url 'main:main' %}">Gusto</a></h5></li>
+            <li><h5 class="login-btn"><a href="{% url 'users:login' %}">Login</a></h5></li>
+
+            <!-- product search engine -->
+            <li><form class="search" method="post" action="{% url 'searchbar:search_products' %}">
+                {% csrf_token %}
+                <input type="text" placeholder="Search Product" name="search-bar">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form></li>
+        </ul>
+    </div>
+    
+    <!-- display product details -->
+    <div class="product-details">
+        <div class="product-item">
+            <img src="{{ items.image.url }}">
+            <h2>{{ items.title }}</h2>
+
+            <div class="product-info">
+                <h4><ion-icon name="star"></ion-icon> {{ items.ratingAvg }} ({{ items.reviewsCount }} review(s))</h4> <!--rating isn't implemented yet, maybe can see only authorized users -->
+                <h5>Brand</h5>
+                <p>{{ items.brand }}</p>
+                <h5>Country of origin</h5>
+                <p>{{ items.country }}</p>
+                <h5>Ingredients</h5>
+                <p>{{ items.ingredients }}</p>
+                <h5>Nutrition Facts</h5>
+                <p>{{ items.nutrition }}</p>
+                <h5>Allergens</h5>
+                <p>{{ items.allergens }}</p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- unauthenticated users cannot see reviews, so they have to log in or register -->
+    <div class="unauth-reviews">
+        <h1>Reviews</h1><br>
+        
+        <div class="unauth-reviews-box">
+            <h3>See reviews and rate products can only autorized users!</h3>
+            <p><a href="{% url 'users:login' %}">Login here</a> or <a href="{% url 'users:register' %}">Register here</a></p>
+        </div>
+    </div>
+{% endblock %}

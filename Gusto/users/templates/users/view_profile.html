@@ -1,0 +1,27 @@
+<!-- View of profile page -->
+
+<!-- Connect base of the webapp -->
+{% extends 'main/base_loggedin.html' %}
+
+{% block title %}
+View Profile
+{% endblock %}
+
+{% block content %}
+    <div class="profile">
+        <div class="prifile-basic-info">
+            <h5 class="edit-profile"><a href="{% url 'users:edit_profile' %}">Edit Profile</a></h5>
+            <img class="profile-pic" src="{{ user.profile.image.url }}">
+            <h2 class="username">{{ user.username }}</h2>
+        </div>
+
+        <div class="profile-details">
+                <p class="name"><b>First Name:</b> {{ user.first_name }}</p>
+                <p class="name" id="last-name"><b>Last Name:</b> {{ user.last_name }}</p>
+                <p class="e-mail"><b>Email:</b> {{ user.email }}</p>
+                <p class="bio"><b>Bio:</b> {{ user.profile.bio }}</p>
+                <p class="living" id="city"><b>City:</b> {{ user.profile.city }}</p>
+                <p class="living"><b>Country:</b> {{ user.profile.country }}</p>
+        </div>
+    </div>
+{% endblock %}

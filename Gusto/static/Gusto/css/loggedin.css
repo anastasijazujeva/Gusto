@@ -1,0 +1,335 @@
+/* Style for authenticated users */
+
+/* -------- Nav bar styling -------- */
+
+div.navbar ul{
+    list-style-type: none;
+    display: block;
+    margin: auto;
+    padding: auto;
+    overflow: hidden;
+    background-color: rgb(115,115,115);
+    border-radius: 20px;
+}
+
+/* Gusto button */
+div.navbar h5.gusto-btn{
+    float: left;
+    margin-left: -10px;
+    margin-top: 35px;
+}
+
+/* Location of a search bar */
+div.navbar form.search{
+    text-align: center;
+    margin-left: 21px;
+    margin-right: 21px;
+    margin-top: 25px;
+}
+
+/* Products button */
+h5.products-btn{
+  float: left;
+  margin-top: -28px;
+  margin-left: 30px;
+}
+
+div.navbar h5 a{
+    display: inline;
+    color: rgb(255,255,255);
+    text-align: center;
+    text-decoration: none;
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+}
+
+/* Hover of nav bar buttons */
+div.navbar h5 a:hover{
+    background-color: rgb(65,65,65);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Admin button */
+div.navbar h5.admin{
+    display: block;
+    float: right;
+    margin-top: -52px;
+    margin-right: 190px;
+}
+
+/* Dropdown profile menu */
+div.profile-dropdown{
+    float: right;
+    overflow: hidden;
+    padding-right: 30px;
+    margin-top: -60px;
+    cursor: context-menu;
+}
+
+h5.my-profile{
+    color: rgb(255,255,255);
+    text-align: center;
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+}
+
+div.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+div.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    margin-right: 10px;
+    margin-left: -20px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+    font-size: 11pt;
+}
+
+/* Hover dropdown buttons */
+div.dropdown-content a:hover {
+    background-color: rgb(115,115,115);
+    color: rgb(255,255,255);
+    border-radius: 20px;
+}
+
+div.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search bar style */
+div.navbar form.search input[type=text]{
+    font-size: 14pt;
+    font-family: Georgia, serif;
+    border-radius: 20px;
+    padding: 7px 7px 7px 15px;
+}
+
+div.navbar form.search button{
+    padding: 10px 15px 10px 15px;
+    background-color: rgb(255,255,255);
+    color: rgb(115,115,115);
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Hover search button */
+div.navbar form.search button:hover{
+    background-color: rgb(65,65,65);
+    color: rgb(255,255,255);
+}
+
+/* -------- Style home page -------- */
+
+h2.greeting{
+    text-align: center;
+    margin-top: 130px;
+    font-size: 24pt;
+    color: rgb(65,65,65);
+}
+
+h1.gusto-logo{
+    text-align: center;
+    font-size: 72pt;
+    color: rgb(155,17,30);
+    margin-top: 150px;
+}
+
+/* -------- Style product page -------- */
+
+div.products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+h1.product-list{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 28pt;
+    color: rgb(155,17,30);
+}
+
+div.product{
+    border: 1px solid;
+    border-radius: 20px;
+    border-collapse: rgb(115,115,115);
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Product title */
+div.product h2 a{
+    text-decoration: none;
+    color: rgb(155,17,30);
+    font-size: 20pt;
+}
+
+div.product h2 a:hover{
+    background-color: rgb(155,17,30);
+    border-radius: 20px;
+    color: rgb(255,255,255);
+    padding: 10px;
+}
+
+/* Product content */
+div.product p{
+    font-size: 12pt;
+}
+
+/* Rating icon */
+ion-icon[name="star"]{
+    color: rgb(252, 207, 3);
+    font-size: 18pt;
+}
+
+/* -------- Style product details -------- */
+
+/* Back button */
+div.back h5 a{
+    text-decoration: none;
+    font-size: 11pt;
+    color: rgb(115,115,155);
+    text-transform: uppercase;
+}
+
+div.back h5 a:hover{
+    border: 1px solid;
+    border-color: rgb(65,65,65);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+div.product-item img{
+    width: 30%;
+    margin-left: 530px;
+}
+
+/* Whishlist button */
+div.heart{
+    text-align: center;
+    margin-top: 30px;
+}
+
+div.product-item h2{
+    color: rgb(155,17,30);
+    text-align: center;
+    font-size: 20pt;
+    margin-top: 50px;
+}
+
+div.product-info{
+    border: 1px solid;
+    border-radius: 20px;
+    border-color: rgb(115,115,115);
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-top: 50px;
+}
+
+div.product-item p{
+    font-size: 14pt;
+}
+
+div.product-item h5{
+    font-size: 16pt;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div.product-item h4{
+    text-align: center;
+    font-size: 16pt;
+    margin-bottom: 50px;
+}
+
+/* -------- Review section -------- */
+
+div.review-section{
+    border: 1px solid;
+    border-radius: 20px;
+    border-color: rgb(115,115,115);
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 50px 450px;
+}
+
+div.reviews h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: -30px;
+}
+
+div.review-section h4{
+    font-size: 14pt;
+}
+
+label.rate-label{
+    font-size: 14pt;
+}
+
+button.leave-review-btn{
+    padding: 10px 15px 10px 15px;
+    color: rgb(115,115,115);
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 140px;
+}
+
+div.review-section img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+div.reviewer{
+    border-top: 1px solid;
+    border-color: rgb(115,115,115);
+}
+
+p.review-user{
+    font-size: 14pt;
+}
+
+p.review-body{
+    font-size: 14pt;
+    margin-left: 85px;
+    margin-top: 35px;
+}
+
+p.no-reiews{
+    font-size: 14pt;
+}
+
+/* -------- Style search results -------- */
+
+h1.no-product-list{
+    text-align: center;
+    margin-top: 250px;
+    font-size: 32pt;
+    color: rgb(155,17,30);
+}
+
+/* -------- Style whislist message -------- */
+
+#no-wishlist{
+    margin-top: 170px;
+    margin-left: 520px;
+    margin-right: -550px;
+}

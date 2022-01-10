@@ -1,0 +1,110 @@
+<!-- View of product details page -->
+
+<!-- Connect base structure of the webapp -->
+{% extends 'main/base_loggedin.html' %}
+
+{% block title %}
+Product details
+{% endblock %}
+
+{% block content %}
+    <!-- button to return to product list page -->
+    <div class="back">
+        <h5><a href="{% url 'products:products' %}">To product list</a></h5>
+    </div>
+
+    <!-- display product details -->
+    <div class="product-details">
+        <div class="product-item">
+            <img src="{{ product.image.url }}">
+
+            <!-- whishlist button -->
+            <div class="heart">
+                <!-- if a product is in a user's whishlist, then the heart button is red -->
+                {% if is_wishlist %}
+                    <a href="{% url 'products:wishlist' product.id %}">
+                        <i class="fa-regular fa-heart fa-lg" style="color: rgb(155,17,30);"></i>
+                    </a>
+
+                <!-- if a product isn't in a user's whishlist, the the heart button is gray -->
+                {% else %}
+                <a href="{% url 'products:wishlist' product.id %}">
+                    <i class="fa-regular fa-heart fa-lg" style="color: rgb(171, 171, 171);"></i>
+                </a>
+                {% endif %}
+            </div>
+            
+            <h2>{{ product.title }}</h2>
+
+            <div class="product-info">
+                <h4><ion-icon name="star"></ion-icon> {{ product.ratingAvg }} ({{ product.reviewsCount }} review(s))</h4> <!-- average rating for a product -->
+                <h5>Brand</h5>
+                <p>{{ product.brand }}</p>
+                <h5>Country of origin</h5>
+                <p>{{ product.country }}</p>
+                <h5>Ingredients</h5>
+                <p>{{ product.ingredients }}</p>
+                <h5>Nutrition Facts</h5>
+                <p>{{ product.nutrition }}</p>
+                <h5>Allergens</h5>
+                <p>{{ product.allergens }}</p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- review section -->
+    <div class="reviews">
+        <h1>Reviews</h1><br>
+
+        <div class="review-section">
+
+            <!-- review form -->
+            <form method="post">
+                {% csrf_token %}
+                <h4>Leave Review:</h4>
+
+                <!-- star rating buttons. They can be full or half stars-->
+                <label class="rate-label">Rate:</label>
+                <div class="rate">
+                    <input type="radio" name="rating" id="rating5" value="5" required><label for="rating5" title="5"></label>
+                    <input type="radio" name="rating" id="rating45" value="4.5" required><label for="rating45" title="4.5" class="half-star"></label>
+                    <input type="radio" name="rating" id="rating4" value="4" required><label for="rating4" title="4"></label>
+                    <input type="radio" name="rating" id="rating35" value="3.5" required><label for="rating35" title="3.5" class="half-star"></label>
+                    <input type="radio" name="rating" id="rating3" value="3" required><label for="rating3" title="3"></label>
+                    <input type="radio" name="rating" id="rating2.5" value="2.5" required><label for="rating25" title="2.5" class="half-star"></label>
+                    <input type="radio" name="rating" id="rating2" value="2" required><label for="rating2" title="2"></label>
+                    <input type="radio" name="rating" id="rating15" value="1.5" required><label for="rating15" title="1.5" class="half-star"></label>
+                    <input type="radio" name="rating" id="rating1" value="1" required><label for="rating1" title="1"></label>
+                    <input type="radio" name="rating" id="rating05" value="0.5" required><label for="rating05" title="0.5" class="half-star"></label>
+                </div>
+
+                <br><br>
+
+                <!-- review body, where to write reviews -->
+                {{ review_form.body }}
+                <br>
+
+                <button class="leave-review-btn" type="submit">Leave</button>
+            </form>
+
+            <br>
+
+            <!-- if there are no reviews for a product in the database, then display a message -->
+            {% if not product.reviews.all %}
+                <p class="no-reiews">No Reviews Yet...</p>
+
+            <!-- if there are reviews for a product in the database, then display all of them -->
+            {% else %}
+                {% for review in product.reviews.all %}
+                <div class="reviewer">
+                    <p class="review-user"><img class="review-pic" src="{{ review.user.profile.image.url }}">
+                    <b>{{ review.user }} - {{ review.date }} &emsp; <ion-icon name="star"></ion-icon>{{ review.rating }}</b></p>
+                    <p class="review-body">{{ review.body }}</p>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

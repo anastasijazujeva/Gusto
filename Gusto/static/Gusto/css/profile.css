@@ -1,0 +1,120 @@
+/* Profile Style */
+
+/* -------- View profile -------- */
+
+div.prifile-basic-info{
+  text-align: center;
+  margin-top: 100px;
+}
+
+div.prifile-basic-info img.profile-pic{
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+}
+
+/* Edit profile button */
+div.prifile-basic-info h5.edit-profile a{
+  text-decoration: none;
+  font-size: 11pt;
+  color: rgb(115,115,155);
+  text-transform: uppercase;
+}
+
+div.prifile-basic-info h5.edit-profile a:hover{
+    border: 1px solid;
+    border-color: rgb(65,65,65);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+div.prifile-basic-info h5.edit-profile{
+  margin-bottom: 30px;
+}
+
+div.prifile-basic-info h2.username{
+  font-size: 18pt;
+  color: rgb(155,17,30);
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+div.profile-details{
+  border: 1px solid;
+  border-color: rgb(115,115,115);
+  border-radius: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 50px 450px;
+}
+
+div.profile-details p.name{
+    font-size: 16pt;
+    text-align: center;
+}
+
+div.profile-details #last-name{
+    margin-top: -10px;
+}
+
+div.profile-details p.e-mail{
+  font-size: 13pt;
+  text-align: center;
+  margin-top: 30px;
+}
+
+div.profile-details p.bio{
+  margin-top: 30px;
+}
+
+div.profile-details #city{
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
+
+div.profile-details p.living{
+  text-align: center;
+}
+
+/* -------- Edit profile -------- */
+div.edit-title{
+  text-align: center;
+}
+
+div.edit-title h2.edit-title{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 28pt;
+  color: rgb(155,17,30);
+}
+
+div.edit-title img.change-pic{
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+}
+
+form.edit-profile{
+  border: 1px solid;
+  border-color: rgb(115,115,115);
+  border-radius: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  margin: 50px 400px;
+  font-size: 14pt;
+}
+
+/* Update button */
+form.edit-profile button.update-profile{
+  padding: 10px 15px 10px 15px;
+  background-color: rgb(115,115,115);
+  color: rgb(255,255,255);
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-size: 12pt;
+  margin-left: 235px;
+  margin-top: 30px;
+}

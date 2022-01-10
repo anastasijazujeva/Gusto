@@ -1,0 +1,58 @@
+<!-- Base view template for pages of authorized users to keep one structure -->
+
+<!-- Connect static files -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- place for title, it can be changed depending on a page -->
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- connecting CSS for design purposes -->
+    <link rel="stylesheet" href="{% static 'Gusto/css/loggedin.css' %}">
+    <link rel="stylesheet" href="{% static 'Gusto/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Gusto/css/profile.css' %}">
+
+    <!-- connecting icons for rating and wishlist -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <!-- button to redirect to home page -->
+            <li><h5 class="gusto-btn"><a href="{% url 'main:home' %}">Gusto</a></h5></li>
+
+            <!-- product search engine -->
+            <li><form class="search" method="post" action="{% url 'searchbar:search_products' %}">
+                {% csrf_token %}
+                <input type="text" placeholder="Search Product" name="search-bar">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form></li>
+
+            <!-- profile options -->
+            <li><h5 class="products-btn"><a href="{% url 'products:products' %}">All Products</a></h5></li>
+            <li><div class="profile-dropdown">
+                    <h5 class="my-profile">My Profile</h5>
+                    <div class="dropdown-content">
+                        <a href="{% url 'users:view_profile' %}">View Profile</a>
+                        <a href="{% url 'users:rating_list' %}">My Ratings</a>
+                        <a href="{% url 'users:wishlist_list' %}">Wish List</a>
+                        <a href="{% url 'users:logout' %}">{% csrf_token %} Logout</a>
+                    </div>
+            </div></li>
+        </ul>
+    </div>
+
+    <!-- content block which depends on a page -->
+    {% block content %}{% endblock%}
+
+    <!-- connecting icons for rating and wishlist -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

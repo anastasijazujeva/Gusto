@@ -1,0 +1,32 @@
+<!-- View of page, when a user is logged out -->
+
+<!-- Connect base of the webapp -->
+{% extends 'main/base.html' %}
+
+{% block title %}
+See you soon! :)
+{% endblock %}
+
+{% block content %}
+    <!-- navigation bar -->
+    <div class="navbar">
+        <ul>
+            <!-- button to redirect to main page -->
+            <li><h5 class="gusto-btn"><a href="{% url 'main:main' %}">Gusto</a></h5></li>
+            <li><h5 class="login-btn"><a href="{% url 'users:login' %}">Login</a></h5></li>
+
+            <!-- product search engine -->
+            <li><form class="search" method="post" action="{% url 'searchbar:search_products' %}">
+                {% csrf_token %}
+                <input type="text" placeholder="Search Product" name="search-bar">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form></li>
+        </ul>
+    </div>
+
+    <div class="logout-view">
+        <h1 class="logout-view">Thank you for using Gusto!</h1>
+        <h5 class="to-main"><a href="{% url 'main:main' %}">To Main Page</a></h5>
+    </div>
+    
+{% endblock %}

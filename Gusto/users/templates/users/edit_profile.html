@@ -1,0 +1,28 @@
+<!-- View of edit profile page -->
+
+<!-- Connect base of the webapp -->
+{% extends 'main/base_loggedin.html' %}
+
+{% block title %}
+Edit Profile
+{% endblock %}
+
+{% block content %}
+    <div class="edit-title">
+        <h2 class="edit-title">Edit Profile</h2>
+        <img class="change-pic" src="{{ user.profile.image.url }}">
+    </div>
+    
+    <form class="edit-profile" action="{% url 'users:edit_profile' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p class="change-pic-btn"><b>Profile Picture:</b> {{ additional_form.image }}</p>
+        <p><b>Username:</b> {{ form.username }}</p>
+        <p><b>First Name:</b> {{ form.first_name }}</p>
+        <p><b>Last Name:</b> {{ form.last_name }}</p>
+        <p><b>Email:</b> {{ form.email }}</p>
+        <p><b>Bio:</b> {{ additional_form.bio }}</p>
+        <p><b>City:</b> {{ additional_form.city }}</p>
+        <p><b>Country:</b> {{ additional_form.country }}</p>
+        <button class="update-profile" type="submit">Update Profile</button>
+    </form>
+{% endblock %}

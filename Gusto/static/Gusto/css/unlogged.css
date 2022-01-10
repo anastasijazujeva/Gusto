@@ -1,0 +1,503 @@
+/* Style for unlogged users */
+
+/* -------- Nav bar styling -------- */
+
+div.navbar ul{
+    list-style-type: none;
+    margin: auto;
+    padding: auto;
+    overflow: hidden;
+    background-color: rgb(115,115,115);
+    border-radius: 20px;
+}
+
+/* Gusto button */
+div.navbar h5.gusto-btn{
+    float: left;
+    margin-left: -10px;
+    margin-top: 30px;
+}
+
+/* Login button */
+div.navbar h5.login-btn{
+    float: right;
+    padding-right: 30px;
+    margin-top: 30px;
+}
+
+/* Location of search bar */
+div.navbar form.search{
+    text-align: center;
+    margin: 21px;
+}
+
+/* Text of nav bar */
+div.navbar li a{
+    display: inline;
+    color: rgb(255,255,255);
+    text-align: center;
+    text-decoration: none;
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+}
+
+/* Hover of nav bar buttons */
+div.navbar li a:hover{
+    background-color: rgb(65,65,65);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Search bar style */
+div.navbar form.search input[type=text]{
+    font-size: 14pt;
+    font-family: Georgia, serif;
+    border-radius: 20px;
+    padding: 7px 7px 7px 15px;
+}
+
+div.navbar form.search button{
+    padding: 10px 15px 10px 15px;
+    background-color: rgb(255,255,255);
+    color: rgb(115,115,115);
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+div.navbar form.search button:hover{
+    background-color: rgb(65,65,65);
+    color: rgb(255,255,255);
+}
+
+/* Arrow style */
+ion-icon{
+    font-size: 54pt;
+    color: rgb(115,115,115);
+}
+
+div.icon-center{
+    text-align: center;
+}
+
+#upper-arrow{
+    padding-top: 50px;
+}
+
+#bottom-arrow{
+    padding-bottom: 25px;
+    padding-top: 75px;
+}
+
+/* -------- Body style -------- */
+
+/* Gusto logo */
+div.gusto{
+    text-align: center;
+    display: block;
+}
+
+h1.gusto-logo{
+    font-size: 72pt;
+    color: rgb(155,17,30)
+}
+
+p.gusto-credo{
+    color: rgb(155,17,30);
+    margin-top: -50px;
+    font-size: 14pt;
+}
+
+/* Main text */
+div.body-text{
+    text-align: center;
+}
+
+h5.register-btn{
+    font-size: 14pt;
+    text-transform: uppercase;
+}
+
+h5.register-btn a{
+    text-decoration: none;
+    background-color: rgb(115,115,115);
+    border-radius: 20px;
+    padding: 10px;
+    color: rgb(255,255,255)
+}
+
+h5.register-btn a:hover{
+    background-color: rgb(65,65,65);
+}
+
+/* -------- To Top button -------- */
+
+#top-btn{
+    display: none;
+    position: fixed;
+    float: right;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    padding: 20px;
+    font-size: 12pt;
+    border: none;
+    border-radius: 10px;
+    z-index: 99;
+}
+
+/* -------- Reasons why to sign up -------- */
+h3.reason{
+    padding-top: 50px;
+    font-size: 28pt;
+}
+
+div.why-signup{
+    margin-top: 80px;
+    font-size: 14pt;
+}
+
+div.find{
+    margin-bottom: 100px;
+}
+
+h4.find{
+    font-size: 20pt;
+}
+
+div.check-reviews{
+    margin-bottom: 100px;
+}
+
+h4.check-reviews{
+    font-size: 20pt;
+}
+
+div.add-wishlist{
+    margin-bottom: 100px;
+}
+
+h4.add-wishlist{
+    font-size: 20pt;
+}
+
+h4.share-review{
+    font-size: 20pt;
+}
+
+img.search-img{
+    width: 30%;
+    border-radius: 20px;
+    float: center;
+}
+
+img.reviews-img{
+    width: 30%;
+    border-radius: 20px;
+    float: center;
+}
+
+img.wishlist-img{
+    width: 30%;
+    border-radius: 20px;
+    float: center;
+}
+
+img.rate-img{
+    width: 30%;
+    border-radius: 20px;
+    float: center;
+}
+
+/* -------- Login form -------- */
+
+div.login-navbar ul{
+    list-style-type: none;
+    margin: auto;
+    padding: auto;
+    overflow: hidden;
+    background-color: rgb(115,115,115);
+    border-radius: 20px;
+}
+
+div.login-navbar h5.gusto-btn{
+    float: left;
+    margin-left: -10px;
+    margin-top: 25px;
+}
+
+div.login-navbar h5.signup-btn{
+    float: right;
+    padding-right: 30px;
+    margin-top: 25px;
+}
+
+div.login-navbar li a{
+    display: inline;
+    color: rgb(255,255,255);
+    text-align: center;
+    text-decoration: none;
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+}
+
+/* Hover of nav bar buttons */
+div.login-navbar li a:hover{
+    background-color: rgb(65,65,65);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+h2.login{
+    font-size: 36pt;
+    text-align: center;
+    margin-top: 100px;
+    color: rgb(155,17,30);
+}
+
+form.login-form{
+    text-align: center;
+    font-size: 20pt;
+    border: rgb(115,115,115) solid;
+    border-width: 2px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+form.login-form input.login-submit{
+    text-align: center;
+    background-color: rgb(115,115,115);
+    color: rgb(255,255,255);
+    font-size: 14pt;
+    margin-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+form.login-form p.login-username{
+    margin-bottom: 5px;
+}
+
+form.login-form p.login-password{
+    margin-bottom: 5px;
+    margin-top: 50px;
+}
+
+form.login-form input.login-submit:hover{
+    background-color: rgb(65,65,65);
+}
+
+/* -------- Registration form -------- */
+
+h2.register{
+    font-size: 36pt;
+    text-align: center;
+    margin-top: 60px;
+    color: rgb(155,17,30);
+}
+
+form.register-form{
+    text-align: center;
+    border: rgb(115,115,115) solid;
+    border-width: 2px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+form.register-form p.rules{
+    text-align: left;
+    padding-left: 25px;
+    margin-top: -10px;
+    color: rgb(115,115,115);
+}
+
+form.register-form ul.rules{
+    text-align: left;
+    color: rgb(115,115,115);
+}
+
+form.register-form p.signup-username{
+    font-size: 20pt;
+}
+
+form.register-form p.signup-password{
+    font-size: 20pt;
+}
+
+form.register-form input.register-submit{
+    text-align: center;
+    background-color: rgb(115,115,115);
+    color: rgb(255,255,255);
+    font-size: 14pt;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+form.register-form input.register-submit:hover{
+    background-color: rgb(65,65,65);
+}
+
+/* -------- Logout view -------- */
+
+div.logout-view{
+    text-align: center;
+    padding: 200px;
+}
+
+div.logout-view h1.logout-view{
+    font-size: 36pt;
+    color: rgb(155,17,30);
+}
+
+div.logout-view h5.to-main{
+    font-size: 18pt;
+}
+
+div.logout-view a{
+    text-decoration: none;
+    color: rgb(255,255,255);
+    background-color: rgb(115,115,115);
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+}
+
+div.logout-view a:hover{
+    background-color: rgb(65,65,65);
+}
+
+/* -------- Style search results -------- */
+
+h1.no-product-list{
+    text-align: center;
+    margin-top: 250px;
+    font-size: 32pt;
+    color: rgb(155,17,30);
+}
+
+div.products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+div.product{
+    border: 1px solid;
+    border-radius: 20px;
+    border-collapse: rgb(115,115,115);
+    margin: 10px;
+    padding: 10px;
+}
+
+div.product h2 a{
+    text-decoration: none;
+    color: rgb(155,17,30);
+    font-size: 20pt;
+}
+
+div.product h2 a:hover{
+    background-color: rgb(155,17,30);
+    border-radius: 20px;
+    color: rgb(255,255,255);
+    padding: 10px;
+}
+
+div.product p{
+    font-size: 12pt;
+}
+
+ion-icon[name="star"]{
+    color: rgb(252, 207, 3);
+    font-size: 18pt;
+}
+
+/* -------- Style product details -------- */
+
+div.back h5 a{
+    text-decoration: none;
+    font-size: 11pt;
+    color: rgb(115,115,155);
+    text-transform: uppercase;
+}
+
+div.back h5 a:hover{
+    border: 1px solid;
+    border-color: rgb(65,65,65);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+div.product-item img{
+    width: 30%;
+    margin-left: 530px;
+    margin-top: 50px;
+}
+
+div.product-item h2{
+    color: rgb(155,17,30);
+    text-align: center;
+    font-size: 20pt;
+    margin-top: 50px;
+}
+
+div.product-info{
+    border: 1px solid;
+    border-radius: 20px;
+    border-color: rgb(115,115,115);
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-top: 50px;
+}
+
+div.product-item p{
+    font-size: 14pt;
+}
+
+div.product-item h5{
+    font-size: 16pt;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div.product-item h4{
+    text-align: center;
+    font-size: 16pt;
+    margin-bottom: 50px;
+}
+
+div.unauth-reviews-box{
+    border: 1px solid;
+    border-radius: 20px;
+    border-color: rgb(115,115,115);
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 50px 450px;
+    text-align: center;
+}
+
+div.unauth-reviews-box a{
+    color: rgb(115,115,115);
+}
+
+div.unauth-reviews h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: -30px;
+}

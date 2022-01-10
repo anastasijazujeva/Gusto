@@ -1,0 +1,103 @@
+<!-- View of main page for unauthorized users -->
+
+<!-- Connect base structure of the webapp -->
+{% extends 'main/base.html' %}
+
+{% block title %}
+Gusto
+{% endblock %}
+
+{% block content %}
+    
+    <!-- navigation bar -->
+    <div class="navbar">
+        <ul>
+            <!-- button that redirects to the main page -->
+            <li><h5 class="gusto-btn"><a href="{% url 'main:main' %}">Gusto</a></h5></li>
+            <li><h5 class="login-btn"><a href="{% url 'users:login' %}">Login</a></h5></li>
+
+            <!-- product search engine -->
+            <li><form class="search" method="post" action="{% url 'searchbar:search_products' %}">
+                {% csrf_token %}
+                <input type="text" placeholder="Search Product" name="search-bar">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form></li>
+        </ul>
+    </div>
+    
+    <!-- content -->
+    <div id="upper-arrow" class="icon-center"><ion-icon name="arrow-up-outline"></ion-icon></div>
+    <div class="gusto">
+        <h1 class="gusto-logo">Gusto</h1>
+        <p class="gusto-credo">Place where you will find a product to your liking!</p>
+    </div>
+    <div id="bottom-arrow" class="icon-center"><ion-icon name="arrow-down-outline"></ion-icon></div>
+
+    <!-- button that returns to the top of the page -->
+    <button id="top-btn" onclick="toTop()">Top</button>
+
+    <div class="body-text">
+        <h5 class="register-btn"><a href="{% url 'users:register' %}">Register</a></h5>
+
+        <h3 class="reason">Why should you sign up?</h3>
+
+        <div class="why-signup">
+            <div class="find">
+                <h4 class="find">Find a food you will like</h4>
+                <p class="find">Use our search to find a product you are interested for<br> and see information
+                    like product raiting, reviews,<br> producer country, brand, ingredients, nutrition facts,
+                    and allergens!
+                </p>
+                <img src="/media/body_images/search.jpg" alt="Search a product image" class="search-img">
+            </div>
+            
+            <div class="check-reviews">
+                <h4 class="check-reviews">See reviews and raiting for selected product</h4>
+                <p class="check-reviews">To make the right choice according to<br> your tastes,
+                    read the product reviews and check the rating!
+                </p>
+                <img src="/media/body_images/reviews.jpg" alt="Check reviews of a product image" class="reviews-img">
+            </div>
+            
+            <div class="add-wishlist">
+                <h4 class="add-wishlist">Add a product to wishlist so you could remember to taste it</h4>
+                <p class="add-wishlist">If you have found a product that you want to taste,<br> then add it to
+                    your wish list so as not to forget<br> to diversify your meal with new taste impressions!
+                </p>
+                <img src="/media/body_images/wishlist.jpg" alt="Add to wishlist image" class="wishlist-img">
+            </div>
+
+            <div class="share-review">
+                <h4 class="share-review">Share your own review and rating</h4>
+                <p class="share-review">Rate the product you have tasted and<br> leave a review to help other 
+                    users choose the product they will like!
+                </p>
+                <img src="/media/body_images/rate.jpg" alt="Rate a product image" class="rate-img">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- top button function implementation -->
+    <script>
+        // get button
+        topBtn = document.getElementById("top-btn");
+        window.onscroll = function() {scroll()};
+
+        // show button
+        function scroll() {
+            if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+                topBtn.style.display = "block";
+            }
+            else {
+                topBtn.style.display = "none";
+            }
+        }
+
+        // scroll to top, when button is pressed
+        function toTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+{% endblock %}

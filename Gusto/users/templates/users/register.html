@@ -1,0 +1,36 @@
+<!-- View of registration form -->
+
+<!-- Connect base of the webapp -->
+{% extends 'main/base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+    <!-- navigation bar -->
+    <div class="login-navbar">
+        <ul>
+            <!-- button to redirect to main page -->
+            <li><h5 class="gusto-btn"><a href="{% url 'main:main' %}">Gusto</a></h5></li>
+            <li><h5 class="signup-btn"><a href="{% url 'users:login' %}">Login</a></h5></li>
+        </ul>
+    </div>
+
+    <!-- registration form -->
+    <h2 class="register">Register</h2>
+    <form class="register-form" action="{% url 'users:register' %}" method="post">
+        {% csrf_token %}
+        <p class="signup-username">Username: {{ form.username }}</p>
+        <p class="rules">Letters, digits and @/./+/-/_ only.</p>
+        <p class="signup-password">Password: {{ form.password1 }}</p>
+        <ul class="rules">
+            <li>Your password can’t be too similar to your other personal information.</li>
+            <li>Your password must contain at least 8 characters.</li>
+            <li>Your password can’t be a commonly used password.</li>
+            <li>Your password can’t be entirely numeric.</li>
+        </ul>
+        <p class="signup-password">Repeate password: {{ form.password2 }}</p>
+        <input class="register-submit" type="submit" value="Register">
+    </form>
+{% endblock %}

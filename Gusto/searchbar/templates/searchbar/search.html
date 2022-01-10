@@ -1,0 +1,46 @@
+<!-- Search results for users that are not logged in -->
+
+{% extends 'main/base.html' %}
+
+{% block title %}
+Search Results
+{% endblock %}
+
+{% block content %}
+    <div class="navbar">
+        <ul>
+            <!-- Gusto button to redirect to main page -->
+            <li><h5 class="gusto-btn"><a href="{% url 'main:main' %}">Gusto</a></h5></li>
+            <li><h5 class="login-btn"><a href="{% url 'users:login' %}">Login</a></h5></li>
+            <!-- product search -->
+            <li><form class="search" method="post" action="{% url 'searchbar:search_products' %}">
+                {% csrf_token %}
+                <input type="text" placeholder="Search Product" name="search-bar">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form></li>
+        </ul>
+    </div>
+
+    {% if searched %}
+        {% if length == 0 %} <!-- if searched product does not exist in Product objects -->
+            <h1 class="no-product-list">This product does not exist :(</h1>
+        {% else %}
+        <div class="products">
+            {% for item in items %}
+                <div class="product">
+                    <h2><a href="{% url 'searchbar:search_details' item.id %}">{{ item.title }}</a></h2> <!-- <a href="{% url 'products:product_details' item.id %}"></a> -->
+                    <h4><ion-icon name="star"></ion-icon> {{ item.ratingAvg }}</h4>
+                    <p><b>Brand: </b>{{ item.brand }}</p>
+                    <p><b>Country of origin: </b>{{ item.country }}</p>
+                    <p><b>Ingredients: </b>{{ item.snippet_ingr }}</p>
+                    <p><b>Allergens: </b>{{ item.allergens }}</p>
+                    <p><b>Nutrition Facts: </b>{{ item.snippet_nutr }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% else %}  <!-- if nothing was searched, but pressed the search button -->
+        <h1 class="no-product-list">Hey! You forgot to search a product...</h1> 
+    {% endif %}
+{% endblock %}
+

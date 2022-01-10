@@ -1,0 +1,31 @@
+<!-- View of my rating page -->
+
+<!-- Connect base of the webapp -->
+{% extends 'main/base_loggedin.html' %}
+
+{% block title %}
+My Ratings
+{% endblock %}
+
+{% block content %}
+    <h1 class="product-list">My Ratings</h1>
+
+    <!-- list all products thet the user has rated-->
+    <div class="products">
+        {% for rate in rated %}
+        <div class="product">
+            <h2><a href="{% url 'products:product_details' rate.product.id %}">{{ rate.product.title }}</a></h2>
+            <h4><ion-icon name="star"></ion-icon>My Rating: {{ rate.rating }}</h4>
+            <p><b>Brand: </b>{{ rate.product.brand }}</p>
+            <p><b>Country of origin: </b>{{ rate.product.country }}</p>
+            <p><b>Ingredients: </b>{{ rate.product.snippet_ingr }}</p>
+            <p><b>Allergens: </b>{{ rate.product.allergens }}</p>
+            <p><b>Nutrition Facts: </b>{{ rate.product.snippet_nutr }}</p>
+        </div>
+        
+        <!-- if the user haven't rated any product, then show the message -->
+        {% empty %}
+            <h1 id="no-wishlist" class="no-product-list">You haven't rated any product yet.</h1>
+        {% endfor %}
+    </div>
+{% endblock %}

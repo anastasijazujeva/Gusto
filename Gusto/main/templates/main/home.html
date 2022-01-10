@@ -1,0 +1,22 @@
+<!-- View of home page for authorized users -->
+
+<!-- Connect base structure of the webapp -->
+{% extends 'main/base_loggedin.html' %}
+
+{% block title %}
+Home of Gusto
+{% endblock %}
+
+{% block content %}
+
+    <!-- if a user is staff member (admin), then it has button that redirects to admin page -->
+    {% if user.is_staff %}
+        <div class="navbar">
+            <h5 class="admin"><a href="admin/" target="_blank">Admin</a></h5>
+        </div>
+    {% endif %}
+    
+    <!-- display greeting to a user with it's username -->
+    <h2 class="greeting">Hello, {{ user.username }}!</h2>
+    <h1 class="gusto-logo">Gusto</h1>
+{% endblock %}

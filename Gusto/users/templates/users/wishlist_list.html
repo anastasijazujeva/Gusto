@@ -1,0 +1,31 @@
+<!-- View of wishlist page -->
+
+<!-- Connect base of the webapp -->
+{% extends 'main/base_loggedin.html' %}
+
+{% block title %}
+My Wishlist
+{% endblock %}
+
+{% block content %}
+    <h1 class="product-list">My Wishlist</h1>
+
+    <div class="products">
+        <!-- if there are products in a user's whishlist, then show them all -->
+        {% for wish in wished %}
+            <div class="product">
+                <h2><a href="{% url 'products:product_details' wish.id %}">{{ wish.title }}</a></h2>
+                <h4><ion-icon name="star"></ion-icon> {{ wish.ratingAvg }}</h4>
+                <p><b>Brand: </b>{{ wish.brand }}</p>
+                <p><b>Country of origin: </b>{{ wish.country }}</p>
+                <p><b>Ingredients: </b>{{ wish.snippet_ingr }}</p>
+                <p><b>Allergens: </b>{{ wish.allergens }}</p>
+                <p><b>Nutrition Facts: </b>{{ wish.snippet_nutr }}</p>
+            </div>
+        
+        <!-- if there are no products in a user's whishlist, then show message -->
+        {% empty %}
+            <h1 id="no-wishlist" class="no-product-list">No products in wishlist yet.</h1>
+        {% endfor %}
+    </div>
+{% endblock %}

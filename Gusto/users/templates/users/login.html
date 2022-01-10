@@ -1,0 +1,28 @@
+<!-- View of login form -->
+
+<!-- Connect base of the webapp -->
+{% extends 'main/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+    <!-- navigation bar -->
+    <div class="login-navbar">
+        <ul>
+            <!-- button to redirect to main page -->
+            <li><h5 class="gusto-btn"><a href="{% url 'main:main' %}">Gusto</a></h5></li>
+            <li><h5 class="signup-btn"><a href="{% url 'users:register' %}">Register</a></h5></li>
+        </ul>
+    </div>
+
+    <!-- login form -->
+    <h2 class="login">Login</h2>
+    <form class="login-form" action="{% url 'users:login' %}" method="post">
+        {% csrf_token %}
+        <p class="login-username">Username</p>{{ form.username }}
+        <p class="login-password">Password</p>{{ form.password }}<br>
+        <input class="login-submit" type="submit" value="Login">
+    </form>
+{% endblock %}
